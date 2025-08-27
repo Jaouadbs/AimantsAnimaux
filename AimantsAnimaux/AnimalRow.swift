@@ -7,12 +7,23 @@
 
 import SwiftUI
 
+// Represente la vue d'une ligne de la liste
 struct AnimalRow: View {
+    let animal: Animal
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: getImageName(breed: animal.breed))
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .foregroundColor(Color.green)
+                .frame(width: 40, height: 40)
+                .padding(8)
+            Text(animal.name)
+                .bold()
+            Spacer()
+        }
     }
 }
 
-#Preview {
-    AnimalRow()
-}
+
